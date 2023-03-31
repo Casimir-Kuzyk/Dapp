@@ -1,0 +1,156 @@
+#navbar {
+    background-color: #141414;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
+
+  /* Style the links inside the navbar */
+#navbar a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+.navbar-title {
+    float: none;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    font-size: 30px;
+  }
+
+  /* Change the color of the links on hover */
+#navbar a:hover {
+    color: rgb(255, 255, 255);
+    font-weight: Bold;
+    border-radius: 8px;
+  }
+
+  
+
+  /* Style the list inside the navbar */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Float the list items horizontally */
+li {
+    float: left;
+  }
+
+  /* Clear floats after the list items */
+li:last-child {
+    float: left;
+}
+
+#myButton {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: Medium;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: rgba(52, 152, 219, 0.5);
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(1, 82, 82, 0.5);
+    margin: auto;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#myButton:hover {
+    background-color: #2980b9;
+    cursor: pointer;
+  }
+
+#ethereum-balance {
+    font-size: 20px;
+    color: white;
+    display: block;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: left;
+    transform: translate(0,-50%);
+}
+
+#ethBalance {
+    font-size: 20px;
+    color: white;
+    display: inline-block;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-100%,-50%);
+    border-bottom: 2px solid white;
+    transition: width 0.5s ease-out;
+}
+
+#ethBalance::after {
+    content: '';
+    position: absolute;
+    left: 100%;
+    bottom: -2px;
+    width: 0ch; /* Adjust this value to change the length of the line */
+    border-bottom: 2px solid white;
+    transition: width 0.5s ease-out;
+}
+
+#ethBalance:hover::after {
+    width: 20ch;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: "Segoe UI", sans-serif;
+}
+
+#ethereum-address {
+    font-size: 20px;
+    color: white;
+    display: inline-block;
+    margin: auto;
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    text-align: left;
+    transform: translate(0,-50%);
+}
+
+#ethAddress {
+    font-size: 20px;
+    color: white;
+    display: inline-block;
+    margin: auto;
+    position: absolute;
+    top: 43%;
+    left: 40%;
+    transform: translate(-100%,-50%);
+    border-bottom: 2px solid white;
+    transition: width 0.5s ease-out;
+}
+
+#ethAddress::after {
+    content: '';
+    position: absolute;
+    left: 100%;
+    bottom: -2px;
+    width: 0ch; /* Adjust this value to change the length of the line */
+    border-bottom: 2px solid white;
+    transition: width 0.5s ease-out;
+}
+
+#ethAddress:hover::after {
+    width: 60ch;
+}
