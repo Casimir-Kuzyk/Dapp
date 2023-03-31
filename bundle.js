@@ -6,6 +6,11 @@ const ethers = require("ethers");
 const walletButton = document.getElementById('myButton');
 const ethBalanceDiv = document.getElementById('ethereum-balance');
 const ethAddressDiv = document.getElementById('ethereum-address');
+const ethDetailsButton = document.getElementById('infoButton');
+const ethBlockDiv = document.getElementById('ethereum-block');
+const ethGasDiv = document.getElementById('ethereum-gas');
+const ethChainDiv = document.getElementById('ethereum-chain');
+const ethNetworkDiv = document.getElementById('ethereum-network');
 
 walletButton.addEventListener("click",function(){
     //provider is an ethereum provider, and we can create it with window.ethereum, which is how we access metamask in code.
@@ -28,6 +33,24 @@ walletButton.addEventListener("click",function(){
         
     });
 });
+
+ethDetailsButton.addEventListener("click",function(){
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+
+    provider.getFeeData().then(GasPrice =>{
+        ethGasDiv.innerText = ethers.utils.formatEther(GasPrice.gasPrice);
+    })
+
+    provider.getBlockNumber().then(blockNumber =>{
+        ethBlockDiv.innerText = blockNumber.toString();
+    })
+
+    provider.getNetwork().then(Network =>{
+        ethChainDiv.innerText = Network.chainId.toString();
+        ethNetworkDiv.innerText = Network.name.toString();
+    })
+
+})
 
 //a) Create a div element in your html page. Give it an id, like ethereum-address.
 //b) In your javascript index.js, in the function callback we already have on the button's addEventListener, get that div element by ID. Then, set it's .innervalue property to the user's ethereum address.

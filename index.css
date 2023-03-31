@@ -61,7 +61,7 @@ li:last-child {
     box-shadow: 0 3px 10px rgba(1, 82, 82, 0.5);
     margin: auto;
     position: absolute;
-    top: 30%;
+    top: 20%;
     left: 50%;
     transform: translate(-50%,-50%);
 }
@@ -77,7 +77,7 @@ li:last-child {
     display: block;
     margin: auto;
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     text-align: left;
     transform: translate(0,-50%);
@@ -89,7 +89,7 @@ li:last-child {
     display: inline-block;
     margin: auto;
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 40%;
     transform: translate(-100%,-50%);
     border-bottom: 2px solid white;
@@ -122,7 +122,7 @@ body {
     display: inline-block;
     margin: auto;
     position: absolute;
-    top: 43%;
+    top: 33%;
     left: 50%;
     text-align: left;
     transform: translate(0,-50%);
@@ -134,7 +134,7 @@ body {
     display: inline-block;
     margin: auto;
     position: absolute;
-    top: 43%;
+    top: 33%;
     left: 40%;
     transform: translate(-100%,-50%);
     border-bottom: 2px solid white;
@@ -153,4 +153,184 @@ body {
 
 #ethAddress:hover::after {
     width: 60ch;
+}
+
+#infoButton {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: Medium;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: rgba(52, 152, 219, 0.5);
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(1, 82, 82, 0.5);
+    margin: auto;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#infoButton:hover {
+    background-color: #2980b9;
+    cursor: pointer;
+  }
+
+#ethereum-block {
+    font-size: 20px;
+    color: white;
+    display: inline-block;
+    margin: auto;
+    position: absolute;
+    top: 68%;
+    left: 50%;
+    text-align: left;
+    transform: translate(0,-50%);
+}
+
+#ethBlock {
+    font-size: 20px;
+    color: white;
+    display: inline-block;
+    margin: auto;
+    position: absolute;
+    top: 68%;
+    left: 40%;
+    transform: translate(-100%,-50%);
+    border-bottom: 2px solid white;
+    transition: width 0.5s ease-out;
+}
+
+#ethBlock::after {
+    content: '';
+    position: absolute;
+    left: 100%;
+    bottom: -2px;
+    width: 0ch; /* Adjust this value to change the length of the line */
+    border-bottom: 2px solid white;
+    transition: width 0.5s ease-out;
+}
+
+#ethBlock:hover::after {
+    width: 30ch;
+}
+
+#ethereum-gas {
+    font-size: 20px;
+    color: white;
+    display: inline-block;
+    margin: auto;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    text-align: left;
+    transform: translate(0,-50%);
+}
+
+#ethGas {
+    font-size: 20px;
+    color: white;
+    display: inline-block;
+    margin: auto;
+    position: absolute;
+    top: 75%;
+    left: 40%;
+    transform: translate(-100%,-50%);
+    border-bottom: 2px solid white;
+    transition: width 0.5s ease-out;
+}
+
+#ethGas::after {
+    content: '';
+    position: absolute;
+    left: 100%;
+    bottom: -2px;
+    width: 0ch; /* Adjust this value to change the length of the line */
+    border-bottom: 2px solid white;
+    transition: width 0.5s ease-out;
+}
+
+#ethGas:hover::after {
+    width: 30ch;
+}
+
+#ethereum-chain {
+    font-size: 20px;
+    color: white;
+    display: inline-block;
+    margin: auto;
+    position: absolute;
+    top: 82%;
+    left: 50%;
+    text-align: left;
+    transform: translate(0,-50%);
+}
+
+#ethChain {
+    font-size: 20px;
+    color: white;
+    display: inline-block;
+    margin: auto;
+    position: absolute;
+    top: 82%;
+    left: 40%;
+    transform: translate(-100%,-50%);
+    border-bottom: 2px solid white;
+    transition: width 0.5s ease-out;
+}
+
+#ethChain::after {
+    content: '';
+    position: absolute;
+    left: 100%;
+    bottom: -2px;
+    width: 0ch; /* Adjust this value to change the length of the line */
+    border-bottom: 2px solid white;
+    transition: width 0.5s ease-out;
+}
+
+#ethChain:hover::after {
+    width: 30ch;
+}
+
+#ethereum-network {
+    font-size: 20px;
+    color: white;
+    display: inline-block;
+    margin: auto;
+    position: absolute;
+    top: 89%;
+    left: 50%;
+    text-align: left;
+    transform: translate(0,-50%);
+}
+
+#ethNetwork {
+    font-size: 20px;
+    color: white;
+    display: inline-block;
+    margin: auto;
+    position: absolute;
+    top: 89%;
+    left: 40%;
+    transform: translate(-100%,-50%);
+    border-bottom: 2px solid white;
+    transition: width 0.5s ease-out;
+}
+
+#ethNetwork::after {
+    content: '';
+    position: absolute;
+    left: 100%;
+    bottom: -2px;
+    width: 0ch; /* Adjust this value to change the length of the line */
+    border-bottom: 2px solid white;
+    transition: width 0.5s ease-out;
+}
+
+#ethNetwork:hover::after {
+    width: 30ch;
 }
