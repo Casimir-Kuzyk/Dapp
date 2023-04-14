@@ -2,56 +2,52 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="index.css"
+    <link rel="stylesheet" href="bundle.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 
+<body class="flex flex-col h-screen">
+    <div class="flex flex-1">
+        <div class="w-1/6 bg-blue-900">
+        <div class="flex-grow flex flex-col justify-center">
+            <button id="myButton" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4">
+                Connect
+            </button>
+            <div class="mr-4 mb-4 w-5/6 bg-blue-900 text-white underline">
+                Wallet Address
+            </div>
+            <div class="mr-4 mb-4">
+                <input id="ethAddress" class="w-5/6 bg-blue-900 text-white">
+            </div>
+            <div class="mr-4 mb-4 w-5/6 bg-blue-900 text-white underline">
+                Wallet balance
+            </div>
+            <div class="mr-4 mb-4">
+                <input id="ethBalance" class="w-5/6 bg-blue-900 text-white">
+            </div>
+            <div class="mr-4 mb-4 w-5/6 bg-blue-900 text-white underline">
+                Current block
+            </div>
+            <div class="mr-4 mb-4">
+                <input id="ethBlock" class="w-5/6 bg-blue-900 text-white">
+            </div>
+            <div class="mr-4 mb-4 w-5/6 bg-blue-900 text-white underline">
+                Estimated gas fee
+            </div>
+            <div class="mr-4 mb-4">
+                <input id="ethGas" class="w-5/6 bg-blue-900 text-white">
+            </div>
+<!-- Add an input to collect all of the ERC20 tokens from an address -->
 
-
-<body>
-    <nav id = "navbar">
-        <ul>
-          <li class="navbar-title"><a href="#">ETHEREUM CONNECTOR</a></li>
-        </ul>
-    </nav>
-
-    <button id="myButton">Connect to MetaMask Wallet</button>
-
-    <p id="ethBalance">Ethereum Balance</p>
-    <div id="ethereum-balance">
-        <p>      ...</p>
+        </div>
     </div>
-
-    <p id="ethAddress">Ethereum Address</p>
-    <div id="ethereum-address">
-        <p>      ...</p>
+    <div id="nftImages">
+        
     </div>
-
-    <button id="infoButton">Get Ethereum Block Details</button>
-
-    <p id="ethBlock">Block ID</p>
-    <div id="ethereum-block">
-        <p>      ...</p>
     </div>
-
-    <p id="ethGas">Estimated Gas Price</p>
-    <div id="ethereum-gas">
-        <p>      ...</p>
-    </div>
-
-    <p id="ethChain">Chain ID</p>
-    <div id="ethereum-chain">
-        <p>      ...</p>
-    </div>
-
-    <p id="ethNetwork">Network Name</p>
-    <div id="ethereum-network">
-        <p>      ...</p>
-    </div>
-
 
     <script src ="bundle.js"></script>
 </body>

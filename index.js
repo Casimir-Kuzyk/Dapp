@@ -1,69 +1,83 @@
-const ethers = require("ethers");
+// const ethers = require("ethers");
+import axios from "axios";
+import { ethers } from "ethers";
+console.log('hey');
 
+// const axios = require("axios");
+// const axios = require('axios/dist/browser/axios.cjs')
 //add a button that when clicked, it connects the users MetaMask wallet, and displays the eth balance and wallet address
 
 const walletButton = document.getElementById('myButton');
-const ethBalanceDiv = document.getElementById('ethereum-balance');
-const ethAddressDiv = document.getElementById('ethereum-address');
-const ethDetailsButton = document.getElementById('infoButton');
-const ethBlockDiv = document.getElementById('ethereum-block');
-const ethGasDiv = document.getElementById('ethereum-gas');
-const ethChainDiv = document.getElementById('ethereum-chain');
-const ethNetworkDiv = document.getElementById('ethereum-network');
+const ethBalanceDiv = document.getElementById('ethBalance');
+const ethAddressDiv = document.getElementById('ethAddress');
+const ethBlockDiv = document.getElementById('ethBlock');
+const ethGasDiv = document.getElementById('ethGas');
+const ethChainDiv = document.getElementById('ethChain');
+const ethNetworkDiv = document.getElementById('ethNetwork');
 
 walletButton.addEventListener("click",function(){
     //provider is an ethereum provider, and we can create it with window.ethereum, which is how we access metamask in code.
     //window.ethereum object is available if a user has a metamask installed.
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
-    //call the .send method on the provider, and tell it to request accounts.
-    // this is how we get metamasks approval for a certain website
-    provider.send("eth_requestAccounts",[])
-    .then(addresses => {
-        console.log(addresses);
+    // const provider = new ethers.providers.Web3Provider(window.ethereum);
+    window.ethereum.request({
+        method: "eth_requestAccounts",
+    }).then(addresses=> {
+
+        // console.log(addresses);
         const address = addresses[0];
         console.log(address);
-        ethAddressDiv.innerText = address.toString();
+        ethAddressDiv.value = address.toString();
 
-        provider.getBalance(address).then(balance => {
-            console.log(balance.toString());
-            ethBalanceDiv.innerText = balance.toString();
+
+        window.ethereum.request({
+            method: "eth_getBalance",
+            params: [address, "latest"]
+        }).then(balance => {
+            ethBalanceDiv.value = parseInt(balance);
         })
 
+        window.ethereum.request({
+            method: "eth_gasPrice",
+            params: []
+        }).then(gasPrice => {
+            ethGasDiv.value= ethers.utils.formatEther(gasPrice);
+        })
+
+        window.ethereum.request({
+            method: "eth_blockNumber",
+            params: []
+        }).then(blockNumber => {
+            ethBlockDiv.value = parseInt(blockNumber);
+        });
+
+        //use API to gather NFTs from the address
+        //first use axios to make an http request to the alchemy API
+        const apiKey = "hpJuc6-oDz05yb8ORLdDoerArgsEFOtt";
+        const baseURL = `https://eth-mainnet.g.alchemy.com/nft/v2/${apiKey}/getNFTs/`;
+        const testWallet = '0xe257b12d6746705ce3caeb24f9079bded18fb54f';
+        const urlStruct = `${baseURL}?owner=${testWallet}`;
         
+        var config = {
+            method: 'get',
+            url: urlStruct
+        };
+        
+        axios(config).then(function(response){
+            for (var i=0; i < response.data.ownedNfts.length; i++){
+                var nft = response.data.ownedNfts[i];
+                var img = document.createElement('img');
+                img.src = nft.metadata.image;
+                document.getElementById('nftImages').appendChild(img);
+            };
+        });
+        
+        //     .then(response => console.log(JSON.stringify(response.data,null,2)))
+        //     .catch(error => console.log(error));
+
+
+
+        // myAxios.get(url).then(function(response){ //response is the whole object.. we can use.data to just get what we need
+        //     console.log(response.data)
+        // });
     });
 });
-
-ethDetailsButton.addEventListener("click",function(){
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
-
-    provider.getFeeData().then(GasPrice =>{
-        ethGasDiv.innerText = ethers.utils.formatEther(GasPrice.gasPrice);
-    })
-
-    provider.getBlockNumber().then(blockNumber =>{
-        ethBlockDiv.innerText = blockNumber.toString();
-    })
-
-    provider.getNetwork().then(Network =>{
-        ethChainDiv.innerText = Network.chainId.toString();
-        ethNetworkDiv.innerText = Network.name.toString();
-    })
-
-})
-
-//a) Create a div element in your html page. Give it an id, like ethereum-address.
-//b) In your javascript index.js, in the function callback we already have on the button's addEventListener, get that div element by ID. Then, set it's .innervalue property to the user's ethereum address.
-
-//c) Repeat steps a and b for the ethereum balance. You should be able to click a button, then see your balance and address on the page.
-
-//Work on a dapp! Our dapp provides information about the current Ethereum network. a) Using HTML and CSS, style the page so it looks nice. 
-//Display the user's ethereum address and balance in the navbar. 
-//Give it a nice header, "Ethereum Dapp", styled. Practice your HTML and CSS, and get comfortable creating elements, 
-//giving them ids, and then styling them, then adding functionality to them. The app should look GOOD! 
-//Things should be aligned properly. Google will be your friend here, "how to center a div in CSS", "how to change background color in CSS", etc.
-
-//b) Create several new buttons that can do functions like:
-
-//Get the current ethereum block number and display it to the page
-//Get the current gas price and display it to the page
-//Get the current chain ID and network name, and display it to the page
