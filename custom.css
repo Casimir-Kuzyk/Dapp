@@ -1,0 +1,51 @@
+body {
+    background-color: black;
+}
+
+.navbar {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    width: 200px;
+    margin: 0;
+    padding: 0;
+    margin-right: 10px;
+    background-image: linear-gradient(to left, black,rgb(27, 27, 27));
+    overflow-x: hidden;
+    height: 100vh;
+}
+
+.dataField {
+    margin: 0px 0px 50px 00px;
+    color: white;
+    background-image: linear-gradient(to left, black,rgb(27, 27, 27));
+}
+
+.label {
+    margin: 50px 0px 0px 0px;
+    color: white;
+    background-image: linear-gradient(to left, black,rgb(27, 27, 27));
+}
+
+#nftContainer {
+    padding-top: 10vh;
+    margin-left: calc(20vw + 100px);
+    max-width: 60vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nftImage {
+    width: calc(15vw - 20px);
+    margin-right: 10px;
+    margin-left: 10px;
+    max-width: 15vw;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 10%;
+    box-shadow: inset 0 0 20px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+

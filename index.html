@@ -3,51 +3,57 @@
 
 <head>
     <link rel="stylesheet" href="bundle.css">
+    <link rel="stylesheet" href="custom.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 
-<body class="flex flex-col h-screen">
-    <div class="flex flex-1">
-        <div class="w-1/6 bg-blue-900">
-        <div class="flex-grow flex flex-col justify-center">
-            <button id="myButton" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4">
-                Connect
-            </button>
-            <div class="mr-4 mb-4 w-5/6 bg-blue-900 text-white underline">
-                Wallet Address
-            </div>
-            <div class="mr-4 mb-4">
-                <input id="ethAddress" class="w-5/6 bg-blue-900 text-white">
-            </div>
-            <div class="mr-4 mb-4 w-5/6 bg-blue-900 text-white underline">
-                Wallet balance
-            </div>
-            <div class="mr-4 mb-4">
-                <input id="ethBalance" class="w-5/6 bg-blue-900 text-white">
-            </div>
-            <div class="mr-4 mb-4 w-5/6 bg-blue-900 text-white underline">
-                Current block
-            </div>
-            <div class="mr-4 mb-4">
-                <input id="ethBlock" class="w-5/6 bg-blue-900 text-white">
-            </div>
-            <div class="mr-4 mb-4 w-5/6 bg-blue-900 text-white underline">
-                Estimated gas fee
-            </div>
-            <div class="mr-4 mb-4">
-                <input id="ethGas" class="w-5/6 bg-blue-900 text-white">
-            </div>
-<!-- Add an input to collect all of the ERC20 tokens from an address -->
-
+<body>
+    <div class="navbar">
+        <button id="address-button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 w-full">
+            Connect from Address
+        </button>
+        <input type="text" id="address-input" placeholder="enter wallet address...">
+        <div class="label">
+            Or...
+        </div>
+        <button id="myButton" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 w-full">
+            Connect my Wallet
+        </button>
+        <div class="label">
+            Wallet Address
+        </div>
+        <div class="dataField">
+            <p id="ethAddress">...</p>
+        </div>
+        <div class="label">
+            Wallet balance
+        </div>
+        <div class="dataField">
+            <p id="ethBalance">...</p>
+        </div>
+        <div class="label">
+            Current block
+        </div>
+        <div class="dataField">
+            <p id="ethBlock">...</p>
+        </div>
+        <div class="label">
+            Estimated gas fee
+        </div>
+        <div class="dataField">
+            <p id="ethGas">...</p>
         </div>
     </div>
-    <div id="nftImages">
-        
+
+
+    <div id="nftContainer">
+
     </div>
-    </div>
+
 
     <script src ="bundle.js"></script>
 </body>
