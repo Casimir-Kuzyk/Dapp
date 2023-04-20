@@ -8,3 +8,7 @@ the taskbar should be static on the left side of the page
 ***NFT VIEWER***
 I want the images in a grid. The grid should ONLY consist of images (i.e. no text). on hover, the images should expand, and the neighbour images (up to 2 grid spaces away) should shrink. (closest neighbour shrinks 75%, next closest 50%, next closest 25%..).
 On hover the image data shows up around the image (i.e. NFT name, floor price on opensea...)
+
+***To Do's***
+-hover effect on images 
+-modal of the nft with more info

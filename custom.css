@@ -4,7 +4,7 @@ body {
 
 .navbar {
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     left: 0;
     width: 200px;
     margin: 0;
@@ -47,5 +47,70 @@ body {
     box-shadow: inset 0 0 20px 10px rgba(0, 0, 0, 0.3);
 }
 
+/* Styles for the modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  margin-left: 100px;
+}
 
+/* Styles for the modal content */
+.modal-content {
+  position: relative; /* Set position to relative to enable absolute positioning for the close button */
+  background-color: #000000;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+}
+
+/* Modal Image */
+.modal-image {
+  display: block; /* Set display to block to center the image */
+  margin: auto; /* Center the image horizontally */
+  justify-content: center;
+  max-width: 50vh; /* Set max-width to 100% to scale the image down if it's too large */
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 10vh;
+  right: 30vw;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Styles for the modal name */
+.modal-name {
+  font-size: 28px;
+  font-weight: bold;
+  color: #f1f1f1;
+  max-width: 50vh;
+}
+
+/* Styles for the modal description */
+.modal-description {
+  font-size: 10px;
+  line-height: 1.5;
+  color: #f1f1f1;
+  max-width: 50vh;
+}
 
